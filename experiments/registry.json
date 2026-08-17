@@ -1,0 +1,14 @@
+[
+  {
+    "id": "stroop",
+    "name": "Stroop",
+    "description": "Name the ink color of a word while ignoring what the word says.",
+    "path": "experiments/stroop/index.html"
+  },
+  {
+    "id": "rt-simple",
+    "name": "Simple RT",
+    "description": "Press a key as fast as possible when a stimulus appears.",
+    "path": "experiments/rt-simple/index.html"
+  }
+]

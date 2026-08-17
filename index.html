@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DriftLab</title>
+  <link rel="stylesheet" href="shared/css/base.css" />
+</head>
+<body>
+  <main class="driftlab-container">
+    <h1>DriftLab</h1>
+    <p>
+      A browser-based battery of cognitive psychophysics tasks, analyzed with
+      drift-diffusion modeling to separate processing speed from decision
+      threshold. Pick a task below to play.
+    </p>
+    <div id="task-list" class="driftlab-landing-grid">
+      <p>Loading tasks...</p>
+    </div>
+  </main>
+
+  <script>
+    fetch("experiments/registry.json")
+      .then((res) => res.json())
+      .then((tasks) => {
+        const list = document.getElementById("task-list");
+        if (tasks.length === 0) {
+          list.innerHTML = "<p>No tasks available yet.</p>";
+          return;
+        }
+        list.innerHTML = tasks
+          .map(
+            (task) => `
+              <a class="driftlab-card" href="${task.path}">
+                <h3>${task.name}</h3>
+                <p>${task.description}</p>
+              </a>
+            `
+          )
+          .join("");
+      })
+      .catch((err) => {
+        document.getElementById("task-list").innerHTML =
+          "<p>Could not load task registry. If you opened this file directly (file://), serve it over a local static server instead (e.g. <code>python -m http.server</code>) — browsers block fetch() on file:// for CORS reasons.</p>";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

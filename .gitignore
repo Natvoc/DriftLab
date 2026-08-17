@@ -1,0 +1,34 @@
+# Archivos internos de trabajo — nunca se publican (ver DECISIONS.md, 2026-08-17)
+CLAUDE.md
+CRONOGRAMA.md
+DECISIONS.md
+
+# Python
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Datos con posible info identificable (los datos anónimos sample/ se versionan aparte)
+analysis/data/raw/*
+!analysis/data/raw/.gitkeep

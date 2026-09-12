@@ -3,7 +3,7 @@ exports that follow the common data schema.
 """
 
 from .data_quality import check_trial_counts, count_valid_trials
-from .io import load_csv
+from .io import load_csv, load_export, load_json
 from .metrics import (
     MAX_VALID_RT_MS,
     MIN_VALID_RT_MS,
@@ -21,6 +21,8 @@ from .simulate import simulate_stroop, simulate_stroop_ddm_toy
 
 __all__ = [
     "load_csv",
+    "load_json",
+    "load_export",
     "MIN_VALID_RT_MS",
     "MAX_VALID_RT_MS",
     "filter_valid_trials",

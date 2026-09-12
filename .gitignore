@@ -3,6 +3,9 @@ CLAUDE.md
 CRONOGRAMA.md
 DECISIONS.md
 
+# Estado local de la herramienta Claude Code, no es parte del proyecto
+.claude/
+
 # Python
 venv/
 env/
